@@ -1,0 +1,38 @@
+.center-box{
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    background-color: blue;
+}
+.center-item{
+    width: 100px;
+    display: flex;
+}
+div{
+    /* margin-top: 100px; */
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(100,149,237);
+}
+img{
+    width: 70px;
+}
+h1{
+    font-family: monospace;
+    color: white;
+    flex-grow: 2;
+}
+
+ul{
+    flex-grow: 8;
+    display: flex;
+    justify-content: space-around;
+}
+ul li{
+    display: flex;
+    /* justify-content: space-between; */
+    font-family: monospace;
+}
