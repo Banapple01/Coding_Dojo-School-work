@@ -1,0 +1,71 @@
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\users_shellpy manage.py makemigrations
+Migrations for 'user':
+  user\migrations\0001_initial.py
+    - Create model User
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\users_shellpy manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions, user
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying sessions.0001_initial... OK
+  Applying user.0001_initial... OK
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\users_shell>py manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from user.models import *
+>>> User.first_name.create(Jonathan)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'DeferredAttribute' object has no attribute 'create'
+>>> User.objects.create(first_name = "Jonathan", last_name = "Wright", email_address = "yeet@yert.com", age = 30)
+<User: User object (1)>
+>>> User.objects.create(first_name = "Igor", last_name = "Peat", email_address = "et@yert.com", age = 31)
+<User: User object (2)>
+>>> User.objects.create(first_name = "HO", last_name = "BO", email_address = "old@yert.com", age = 70)
+<User: User object (3)>
+>>> User.objects.all()
+<QuerySet [<User: User object (1)>, <User: User object (2)>, <User: User object (3)>]>
+>>> User.objects.last()
+<User: User object (3)>
+>>> User.objects.first()
+<User: User object (1)>
+>>> last = User.objects.get(id=3)
+>>> last.last_name = "Pancakes"
+>>> last.save
+<bound method Model.save of <User: User object (3)>>
+>>> last.save()
+>>> second = User.object.get(id=2)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'User' has no attribute 'object'
+>>> second = User.objects.get(id=2)
+>>> second.delete()
+(1, {'user.User': 1})
+>>> some_users = User.objects.filter(first_name = 'Jonathan', first_name = 'HO')
+  File "<console>", line 1
+SyntaxError: keyword argument repeated
+>>> User.objects.all(first_name)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'first_name' is not defined
+>>> User.objects.all().order_by('first_name')
+<QuerySet [<User: User object (3)>, <User: User object (1)>]>
+>>>

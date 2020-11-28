@@ -1,0 +1,106 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: rgb(111,89,100);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(250,250,250);
+}
+h1.header {
+    margin: 20px;
+    text-align: center;
+}
+h2.header {
+    margin: 20px;
+}
+div#topLayer {
+    margin: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+div.photo_of_me {
+    margin: 1%;
+    width: 40%;
+    height: 30%;
+    padding: 5px;
+    background-color: rgb(192,192,192);
+}
+.photo_of_me {
+    height: auto;
+    width: 100%;
+}
+div.about {
+    margin: 1%;
+    width: 60%;
+    background-color: rgb(192,192,192);
+}
+h1.about {
+    padding: 10px;
+    background-image: linear-gradient(rgb(178,178,182), rgb(136,134,147), rgb(178,178,182));
+}
+p.about{
+    padding: 10px;
+    font-size: large;
+}
+
+div#bottomLayer {
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+div.lamode {
+    width: 30%;
+    background-color: rgb(192,192,192);
+}
+div.familyContacts {
+    width: 30%;
+    background-color: rgb(192,192,192);
+}
+div.fiveEleven {
+    width: 30%;
+    background-color: rgb(192,192,192);
+}
+img.webimg {
+    height: auto;
+    width: 100%;
+}
+h2.bottomL {
+    padding: 10px;
+    background-image: linear-gradient(rgb(178,178,182), rgb(136,134,147), rgb(178,178,182));
+}
+h3 {
+    padding: 10px;
+    background-image: linear-gradient(rgb(178,178,182), rgb(136,134,147), rgb(178,178,182));
+}
+img.icon {
+    width: 15%;
+    margin: 5px;
+}
+p.but {
+    padding: 10px;
+    text-align: center;
+}
+footer {
+    background-color: rgb(250,250,250);
+}
+p#footer {
+    padding-top: 10px;
+    text-align: center;
+}
+div#footer {
+    padding-bottom: 10px;
+    text-align: center;
+}
+img.littleI {
+    height: 20px;
+    width: 20px;
+}
+#hidden{
+    display: none;
+}

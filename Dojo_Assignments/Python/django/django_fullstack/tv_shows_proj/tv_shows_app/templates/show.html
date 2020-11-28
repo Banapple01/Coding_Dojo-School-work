@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read(One)</title>
+</head>
+<body>
+    <h1>TV Show {{ show.id }}</h1>
+    <h3>Title: {{show.title}}</h3>
+    <h3>Network: {{show.network}}</h3>
+    <h3>Release Date: {{show.rel_date}}</h3>
+    <h3>Description: {{show.desc}}</h3>
+
+    <a href="{% url 'show_edit' show.id %}">Edit</a>
+    <a href="{% url 'show_delete' show.id %}">Delete</a>
+    <a href="/">Go Back</a>
+</body>
+</html>

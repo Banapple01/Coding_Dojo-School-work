@@ -1,0 +1,150 @@
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\dojo_ninjas_proj>py manage.py makemigrations
+Migrations for 'dojo_ninjas_app':
+  dojo_ninjas_app\migrations\0001_initial.py
+    - Create model dojos
+    - Create model ninja
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\dojo_ninjas_proj>py manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojo_ninjas_app, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying dojo_ninjas_app.0001_initial... OK
+  Applying sessions.0001_initial... OK
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\dojo_ninjas_proj>py manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from dojo_ninjas_app.models import *
+>>> dojos.objects.create(name="Yojo",city="Denver",state="CO")
+<dojos: dojos object (1)>
+>>> dojos.objects.create(name="Yejo",city="Salt Lake",state="UT")
+<dojos: dojos object (2)>
+>>> dojos.objects.create(name="Yeeo",city="New York",state="TX")
+<dojos: dojos object (3)>
+>>> d=dojos.objects.get(id=1)
+>>> d.delete()
+(1, {'dojo_ninjas_app.ninja': 0, 'dojo_ninjas_app.dojos': 1})
+>>> d=dojos.objects.get(id=2)
+>>> d.delete()
+(1, {'dojo_ninjas_app.ninja': 0, 'dojo_ninjas_app.dojos': 1})
+>>> d=dojos.objects.get(id=3)
+>>> d.delete()
+(1, {'dojo_ninjas_app.ninja': 0, 'dojo_ninjas_app.dojos': 1})
+>>> dojos.objects.create(name="Yojo",city="Denver",state="CO")
+<dojos: dojos object (4)>
+>>> dojos.objects.create(name="Yejo",city="Salt Lake",state="UT")
+<dojos: dojos object (5)>
+>>> dojos.objects.create(name="Yeeo",city="New York",state="TX")
+<dojos: dojos object (6)>
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=4),first_name="Yeetus",last_name"Spageetus")
+  File "<console>", line 1
+    ninja.objects.create(dojo_id=dojos.objects.get(id=4),first_name="Yeetus",last_name"Spageetus")
+                                                                                      ^
+SyntaxError: invalid syntax
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=4),first_name="Yeetus",last_name="Spageetus")
+<ninja: ninja object (1)>
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=4),first_name="Beatrus",last_name="Williams")
+<ninja: ninja object (2)>
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=4),first_name="Joe",last_name="Beamer")
+<ninja: ninja object (3)>
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=5),first_name="Ho",last_name="BO")
+<ninja: ninja object (4)>
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=5),first_name="Jo",last_name="BRO")
+<ninja: ninja object (5)>
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=5),first_name="Mojo",last_name="Rojo")
+<ninja: ninja object (6)>
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=6),first_name="Henry",last_name="Walker")
+<ninja: ninja object (7)>
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=6),first_name="Benion",last_name="Iyring")
+<ninja: ninja object (8)>
+>>> ninja.objects.create(dojo_id=dojos.objects.get(id=6),first_name="Benny",last_name="Dank")
+<ninja: ninja object (9)>
+>>> dojos.objects.first()
+<dojos: dojos object (4)>
+>>> d=dojos.objects.get(id=4)
+>>> d.ninja.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'dojos' object has no attribute 'ninja'
+>>> dojos.objects.get(id=4).ninja.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'dojos' object has no attribute 'ninja'
+>>> dojos.objects.get(id=4).ninjas.all()
+<QuerySet [<ninja: ninja object (1)>, <ninja: ninja object (2)>, <ninja: ninja object (3)>]>
+>>> dojos.objects.get(id=6).ninjas.all()
+<QuerySet [<ninja: ninja object (7)>, <ninja: ninja object (8)>, <ninja: ninja object (9)>]>
+>>> ninja.object.get(id=9).dojos
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'ninja' has no attribute 'object'
+>>> ninja.get(id=9).dojos
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'ninja' has no attribute 'get'
+>>> dojos.objects.get(id=6)
+<dojos: dojos object (6)>
+>>> ninja.objects.get(id=9).dojos
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'ninja' object has no attribute 'dojos'
+>>> ninja.objects.get(id=9).dojo_id
+<dojos: dojos object (6)>
+>>> dojos.objects.add(desc="")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'Manager' object has no attribute 'add'
+>>> exit
+Use exit() or Ctrl-Z plus Return to exit
+>>> exit()
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\dojo_ninjas_proj>py manage.py makemigrations
+You are trying to add a non-nullable field 'desc' to dojos without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> "old dojo"
+Migrations for 'dojo_ninjas_app':
+  dojo_ninjas_app\migrations\0002_dojos_desc.py
+    - Add field desc to dojos
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\dojo_ninjas_proj>py manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, dojo_ninjas_app, sessions
+Running migrations:
+  Applying dojo_ninjas_app.0002_dojos_desc... OK
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\dojo_ninjas_proj>py manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from dojo_ninjas_app import *
+>>> dojos.objects.create(name="yeet",city="Mazoola",state="MT",desc="YEET")
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'dojos' is not defined
+>>> from dojo_ninjas_app.models import *
+>>> dojos.objects.create(name="yeet",city="Mazoola",state="MT",desc="YEET")
+<dojos: dojos object (7)>
+>>>

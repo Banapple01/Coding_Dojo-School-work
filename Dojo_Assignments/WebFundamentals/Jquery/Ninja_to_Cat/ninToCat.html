@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Ninja To Cat</title>
+    <style>
+        .ninjaVanish {
+            width: auto;
+            height: 300px;
+        }
+        .catVanish {
+            display: none;
+            width: auto;
+            height: 300px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $( "div img" ).click(function(){
+            console.log(this);
+            $(this).toggle();
+            /* if($(this).attr("id") == "2"){
+                $("#1").fadeIn("slow");
+            } */
+            switch ($(this).attr("id")) {
+                case "2":
+                    $("#1").fadeIn("slow");
+                    console.log("1");
+                    break;
+                case "4":
+                    $("#3").fadeIn("slow");
+                    console.log("4");
+                    break;
+                case "6":
+                    $("#5").fadeIn("slow");
+                    console.log("6");
+                    break;
+                case "8":
+                    $("#7").fadeIn("slow");
+                    console.log("8");
+                    break;
+                case "10":
+                    $("#9").fadeIn("slow");
+                    console.log("10");
+                    break;
+                case "1":
+                    $("#2").fadeIn("slow");
+                    console.log("1");
+                    break;
+                case "3":
+                    $("#4").fadeIn("slow");
+                    console.log("4");
+                    break;
+                case "5":
+                    $("#6").fadeIn("slow");
+                    console.log("6");
+                    break;
+                case "7":
+                    $("#8").fadeIn("slow");
+                    console.log("8");
+                    break;
+                case "9":
+                    $("#10").fadeIn("slow");
+                    console.log("10");
+                    break;
+                default:
+                    $("#2").fadeIn("slow");
+                    console.log("d");
+            }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <img class="catVanish" id="1" src="img\cat0.png" alt="Picture of me.">
+        <img class="ninjaVanish" id="2" src="img\ninja0.png" alt="Picture of me.">
+        <img class="catVanish" id="3" src="img\cat1.png" alt="Picture of me.">
+        <img class="ninjaVanish" id="4" src="img\ninja1.png" alt="Picture of me.">
+        <img class="catVanish" id="5" src="img\cat2.png" alt="Picture of me.">
+        <img class="ninjaVanish" id="6" src="img\ninja2.png" alt="Picture of me.">
+        <img class="catVanish" id="7" src="img\cat3.png" alt="Picture of me.">
+        <img class="ninjaVanish" id="8" src="img\ninja3.png" alt="Picture of me.">
+        <img class="catVanish" id="9" src="img\cat4.png" alt="Picture of me.">
+        <img class="ninjaVanish" id="10" src="img\ninja4.png" alt="Picture of me.">
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/CSS.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+    <h1>Welcome To The Great Number Game!</h1>
+    <h3>I am thinking of a number between 1 and 100</h3>
+    <h3>take a guess!</h3>
+    {% if request.session.user_guess == 2 %} 
+        <div id="high">Too high!</div>
+    {% elif request.session.user_guess == 0 %} 
+        <div id="low">Too low!</div>
+    {% elif request.session.user_guess == 1 %} 
+        <div id="rightOn">
+            {{request.session.number}} was the right number!
+            <a href="/reset">Play Again!</a>
+        </div>
+    {% endif %}
+    <form action="/guess" method="post">
+        {% csrf_token %}
+        <input type="number" name="num" id="number">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\books_authors_proj>py manage.py makemigrations
+Migrations for 'books_authors_app':
+  books_authors_app\migrations\0001_initial.py
+    - Create model books
+    - Create model authors
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\books_authors_proj>py manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, books_authors_app, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying books_authors_app.0001_initial... OK
+  Applying sessions.0001_initial... OK
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\books_authors_proj>py manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from books_authors_app.models import *
+>>> books.objects.create(title="C Sharp",desc="The c est of all the languages")
+<books: books object (1)>
+>>> books.objects.create(title="Java",desc="The most java")
+<books: books object (2)>
+>>> books.objects.create(title="Python",desc="like a thnake")
+<books: books object (3)>
+>>> books.objects.create(title="PHP",desc="?")
+<books: books object (4)>
+>>> books.objects.create(title="Ruby",desc="A rock")
+<books: books object (5)>
+>>> authors.objects.create(first_name="Jane",last_name="Austen")
+<authors: authors object (1)>
+>>> authors.objects.create(first_name="Emily",last_name="Dickinson")
+<authors: authors object (2)>
+>>> authors.objects.create(first_name="Fyodor",last_name="Dostoevsky")
+<authors: authors object (3)>
+>>> authors.objects.create(first_name="William",last_name="Shakespeare")
+<authors: authors object (4)>
+>>> authors.objects.create(first_name="Lau",last_name="Tzu")
+<authors: authors object (5)>
+>>> exit()
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\books_authors_proj>py manage.py makemigrations
+No changes detected
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\books_authors_proj>py manage.py makemigrations
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+books_authors_app.authors.notes: (fields.E120) CharFields must define a 'max_length' attribute.
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\books_authors_proj>py manage.py makemigrations
+You are trying to add a non-nullable field 'notes' to authors without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> They're good.
+Invalid input: EOL while scanning string literal (<string>, line 1)
+>>> 'They're good.'
+Invalid input: invalid syntax (<string>, line 1)
+>>> "They're good."
+Migrations for 'books_authors_app':
+  books_authors_app\migrations\0002_authors_notes.py
+    - Add field notes to authors
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\books_authors_proj>py manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, books_authors_app, contenttypes, sessions
+Running migrations:
+  Applying books_authors_app.0002_authors_notes... OK
+
+(djangoEnv) C:\Users\jonot\OneDrive\Documents\school_workspace\Dojo_Assignments\Python\django\django_orm\books_authors_proj>py manage.py shell
+Python 3.8.3 (tags/v3.8.3:6f8c832, May 13 2020, 22:37:02) [MSC v.1924 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from books_authors_app import *
+>>> from books_authors_app.models import *
+>>> books.objects.get(id=1).title = "C#"
+>>> books.objects.get(id=1).save()
+>>> authors.objects.get(id=4).first_name = "Bill"
+>>> authors.objects.get(id=4).save()
+>>> authors.objects.get(id=1).add(books.objects.get(id=1))
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: 'authors' object has no attribute 'add'
+>>> authors.objects.get(id=1).books.add(books.objects.get(id=1))
+>>> authors.objects.get(id=1).books.add(books.objects.get(id=2))
+>>> authors.objects.get(id=2).books.add(books.objects.get(id=1))
+>>> authors.objects.get(id=2).books.add(books.objects.get(id=2))
+>>> authors.objects.get(id=2).books.add(books.objects.get(id=3))
+>>> authors.objects.get(id=3).books.add(books.objects.get(id=1))
+>>> authors.objects.get(id=3).books.add(books.objects.get(id=2))
+>>> authors.objects.get(id=3).books.add(books.objects.get(id=3))
+>>> authors.objects.get(id=3).books.add(books.objects.get(id=4))
+>>> authors.objects.get(id=4).books.add(books.objects.get(id=1))
+>>> authors.objects.get(id=4).books.add(books.objects.get(id=2))
+>>> authors.objects.get(id=4).books.add(books.objects.get(id=3))
+>>> authors.objects.get(id=4).books.add(books.objects.get(id=4))
+>>> authors.objects.get(id=4).books.add(books.objects.get(id=5))
+>>> books.objects.get(id=3).authors.all()
+<QuerySet [<authors: authors object (2)>, <authors: authors object (3)>, <authors: authors object (4)>]>
+>>> books.objects.get(id=3).authors.remove(authors.objects.get(id=2))
+>>> books.objects.get(id=3).authors.all()
+<QuerySet [<authors: authors object (3)>, <authors: authors object (4)>]>
+>>> books.objects.get(id=2).authors.add(authors.objects.get(id=5))
+>>> authors.objects.get(id=3).books.all()
+<QuerySet [<books: books object (1)>, <books: books object (2)>, <books: books object (3)>, <books: books object (4)>]>
+>>> books.objects.get(id=5).authors.all()
+<QuerySet [<authors: authors object (4)>]>
+>>>

@@ -1,0 +1,28 @@
+
+div#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh;
+}
+#low {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
+#rightOn {
+    height: 200px;
+    width: 200px;
+    background-color: green;
+}
+#high {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}

@@ -1,0 +1,128 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    width: 970px;
+    background-color: rgb(36,80,118);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+}
+div p#textsize {
+    margin-top: 30px;
+    padding-left: 50px;
+}
+div #search {
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 20px;
+    background-color: rgb(68,68,68);
+    box-shadow: 1px 1px 8px black;
+}
+div#toplayer {
+    margin: 10px;
+}
+nav {
+    border-radius: 5px;
+    margin: 0px 85px 0px 90px;
+    padding: 15px;
+    background-color: rgb(69,125,173);
+    box-shadow: 3px 3px 8px black;
+}
+nav a {
+    font-size: xx-large;
+    font-family: monospace;
+    color: rgb(252,253,253);
+    text-decoration: none;
+    margin: 0px 5px 0px 5px;
+}
+div#links {
+    display: inline-block;
+    width: 200px;
+    margin: 20px 20px 50px 100px;
+}
+div#links a{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    color: rgb(252,253,253);
+    font-size: large;
+    font-family: monospace;
+}
+div#toplayer div#toptext {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+    width: 550px;
+    padding: 0px;
+    text-align: center;
+    color: rgb(252,253,253);
+    font-family: monospace;
+}
+ol#poem {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+    width: 550px;
+    padding: 0px;
+    text-align: center;
+}
+ol#poem li{
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px 0px 5px 0px;
+    width: 550px;
+    padding: 0px;
+    text-align: center;
+}
+p.zen {
+    font-size: x-large;
+    font-family: monospace;
+    width: 550px;
+    margin: 0px;
+    color: rgb(219,190,59);
+}
+p#z {
+    font-size: x-large;
+    font-family: monospace;
+    color: rgb(252,253,253);
+    width: 550px;
+    margin: 0px;
+}
+div#bottomLayer{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255,255,255);
+}
+div.gettingStarted {
+    margin: 20px 70px 20px 70px;
+    width: 550px;
+    padding: 0px;
+}
+div.gettingStarted ul {
+    margin: 20px 0px 0px 0px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.gettingStarted h3 {
+    text-align: center;
+}
+div.gettingStarted p {
+    text-align: center;
+}
+footer{
+    background-color: rgb(46,104,154);
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+footer a {
+    margin: 20px;
+}
+footer p {
+    margin: 20px;
+}

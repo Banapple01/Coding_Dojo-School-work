@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books and Authors</title>
+</head>
+<body>
+    <h1>Add an Author</h1>
+    <form action="/add_authors" method="post">
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name">
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name">
+        <label for="notes">Notes</label>
+        <input type="text" name="notes">
+        <button type="submit">Add</button>
+    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        {% for a in all_authors %}
+        <tr>
+            <th>{{a.id}}</th>
+            <th>{{a.first_name}} {{a.last_name}}</th>
+            <th><a href="{% url 'a_desc_page' a.id %}">link</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

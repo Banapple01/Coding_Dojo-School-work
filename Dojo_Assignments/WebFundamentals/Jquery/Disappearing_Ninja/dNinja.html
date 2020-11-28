@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="dNinja.css">
+    <title>Disappearing Ninja</title>
+    <script>
+        $(document).ready(function(){
+            $( "div img" ).click(function(){
+            console.log("yeet");
+            $(this).fadeOut("Slow");
+            });
+            $("button").click(function(){
+                $("div img").fadeIn("Slow");
+            })
+        })
+    </script>
+    <style>
+        .photo_of_me {
+            width: 300px;
+            height: 300px;
+        }   
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <img class="photo_of_me" id="1" src="photo_of_me.jpg" alt="Picture of me.">
+        <img class="photo_of_me" id="2" src="photo_of_me.jpg" alt="Picture of me.">
+        <img class="photo_of_me" id="3" src="photo_of_me.jpg" alt="Picture of me.">
+        <img class="photo_of_me" id="4" src="photo_of_me.jpg" alt="Picture of me.">
+        <img class="photo_of_me" id="5" src="photo_of_me.jpg" alt="Picture of me.">
+        <img class="photo_of_me" id="6" src="photo_of_me.jpg" alt="Picture of me.">
+        <img class="photo_of_me" id="7" src="photo_of_me.jpg" alt="Picture of me.">
+        <img class="photo_of_me" id="8" src="photo_of_me.jpg" alt="Picture of me.">
+        <button>Restore</button>
+    </div>
+</body>
+</html>

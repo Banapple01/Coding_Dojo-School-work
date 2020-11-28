@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <p>Your Gold: <div id="G">{{request.session.gold}}</div></p>
+        <div id="actbar">
+            <div class="activities"><h4>Farm</h4>(earns 10-20 golds) <a class="actButton" href="/farm">Find Gold!</a></div>
+            <div class="activities"><h4>Cave</h4>(earns 5-10 golds) <a class="actButton" href="/cave">Find Gold!</a></div>
+            <div class="activities"><h4>House</h4>(earns 2-5 golds) <a class="actButton" href="/house">Find Gold!</a></div>
+            <div class="activities"><h4>Casino</h4>(earns/takes 0-50 golds) <a class="actButton" href="/casino">Find Gold!</a></div>
+        </div>
+        <div id="actlog">
+            <p id="log">Activities: </p>
+            <div id="fullLog">
+                {% for report in request.session.report %}
+                    <p>{{report}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

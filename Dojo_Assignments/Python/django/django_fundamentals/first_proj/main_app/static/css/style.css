@@ -1,0 +1,21 @@
+/*  {
+    height: 0px;
+    width: 0px;
+} */
+div {
+    display: flex;
+    height: 600px;
+    width: 900px;
+    margin: 0 auto;
+    justify-content: center;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: tan;
+    font: bold;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+}

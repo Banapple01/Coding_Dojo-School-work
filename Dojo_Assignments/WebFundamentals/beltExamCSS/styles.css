@@ -1,0 +1,115 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    color: rgb(255, 255, 255);
+}
+body {
+    width: 1020px;
+    padding: 0px 10px;
+    background-color: rgb(24,24,24);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(26,26,26);
+    padding-bottom: 20px;
+}
+header img {
+    padding: 20px;
+}
+header label{
+    padding: 20px;
+    color: #E4E4E4;/* 
+    font-family: monospace; */
+}
+nav {
+    display: flex;
+    padding: 15px;
+    background-image: linear-gradient(rgb(85,85,85), rgb(28,28,28));
+}
+nav a {
+    margin: 0px 15px;
+    color: rgb(163,162,159);
+    font-size: large;
+    text-decoration: none;
+}
+img#mainPic {
+    height: auto;
+    width: 100%;
+}
+div#iconLayer {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 10px 20px;
+    background-color: rgb(26,26,26);
+}
+div#iconLayer img {
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+}
+div.text {
+    display: flex;
+    flex-direction: column;
+}
+div.text * {
+    margin: 5px 0px;
+    color: rgb(163,162,159);
+}
+div.text h2 {
+    color: rgb(234,124,41);
+}
+div#buynowLayer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 30px 10px;
+    background-color: black;
+}
+div#buynowLayer div {
+    width: 759px;
+}
+div#buynowLayer button {
+    margin: auto;
+    height: 50px;
+    width: 90px;
+    border-radius: 15px;
+    background-color: rgb(240,139,63);
+}
+div#bottomLayer {
+    padding: 10px;
+}
+div#bottomLayer div#title {
+    display: flex;
+    padding: 10px;
+}
+div#bottomLayer a {
+    margin-left: auto;
+    text-decoration: none;
+    color: rgb(240,139,63);
+}
+div#bottomLayer div#portfolio {
+    display: flex;
+}
+div.pDiv {
+    margin: 10px;
+}
+div.pDiv h2 {
+    color: rgb(240,139,63);
+}
+div.imgDiv {
+    height: 45%;
+    width: 90%;
+    background-color: rgb(163,162,159);
+    margin: 5px;
+}
+img.pimg {
+    height: auto;
+    width: 100%;
+}
+div#bottomLayer a#btt {
+    margin-left: 90%;
+    color: gray;
+}
+
+
