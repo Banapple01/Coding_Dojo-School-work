@@ -5,8 +5,8 @@ import java.util.Collections;
 
 public class PuzzleJava {
     public static void main(String[] args) {
-        // System.out.println(greaterThanTen());
-        System.out.println(names());
+//        System.out.println(greaterThanTen());
+//        System.out.println(names());
     }
     public static ArrayList<Integer> greaterThanTen(){
         ArrayList<Integer> returnArr = new ArrayList<Integer>();

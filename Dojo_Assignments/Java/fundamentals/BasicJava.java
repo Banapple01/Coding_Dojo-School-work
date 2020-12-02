@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
 public class BasicJava {
     public static void main(String[] args) {
@@ -106,7 +106,7 @@ public class BasicJava {
         // System.out.println("Min " + resArray[1]);
         // System.out.println("Avg " + resArray[2]);
 
-        int[] myArray = {1,5,10,7,-2};
+        // int[] myArray = {1,5,10,7,-2};
         // for(int i = 0; i < 5; i++) {
         //     if(i < 4){
         //         myArray[i] = myArray[i+1];
