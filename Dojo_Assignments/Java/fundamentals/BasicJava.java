@@ -107,15 +107,14 @@ public class BasicJava {
         // System.out.println("Avg " + resArray[2]);
 
         int[] myArray = {1,5,10,7,-2};
-        // int sub = myArray[0];
-        for(int i = 0; i < 5; i++) {
-            if(i < 4){
-                myArray[i] = myArray[i+1];
-            } else {
-                myArray[i] = 0;
-            }
-            System.out.println(myArray[i]);
-        }
+        // for(int i = 0; i < 5; i++) {
+        //     if(i < 4){
+        //         myArray[i] = myArray[i+1];
+        //     } else {
+        //         myArray[i] = 0;
+        //     }
+        //     System.out.println(myArray[i]);
+        // }
 
     }
 }
