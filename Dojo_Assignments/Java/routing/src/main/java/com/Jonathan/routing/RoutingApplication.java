@@ -8,8 +8,6 @@ public class RoutingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RoutingApplication.class, args);
-//		 CodingController cont = new CodingController();
-//		 DojoController dojo = new DojoController();
 	}
 	
 
