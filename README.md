@@ -1,5 +1,5 @@
 # Coding_Dojo
-School Repo
+School Repo - 
 Dojo Assignments folder
          |_ Algorithms
          |_ Java Stack (STS etc.)
