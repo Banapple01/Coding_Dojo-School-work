@@ -1,33 +1,32 @@
-package com.Jonathan.relationships.models;
+package com.Jonathan.relationships1.models;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="persons")
-public class Person {
-    
-    @Id
+@Table(name="dojos")
+public class Dojo {
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String name;
     @Column(updatable=false)
     private Date createdAt;
     private Date updatedAt;
-    @OneToOne(mappedBy="person", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    private License license;
+    @OneToMany(mappedBy="dojo", fetch = FetchType.LAZY)
+    private List<Ninja> ninjas;
     
-    public Person() {
+    public Dojo() {
         
     }
 
@@ -39,20 +38,12 @@ public class Person {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Date getCreatedAt() {
@@ -71,11 +62,11 @@ public class Person {
 		this.updatedAt = updatedAt;
 	}
 
-	public License getLicense() {
-		return license;
+	public List<Ninja> getNinjas() {
+		return ninjas;
 	}
 
-	public void setLicense(License license) {
-		this.license = license;
+	public void setNinjas(List<Ninja> ninjas) {
+		this.ninjas = ninjas;
 	}
 }
