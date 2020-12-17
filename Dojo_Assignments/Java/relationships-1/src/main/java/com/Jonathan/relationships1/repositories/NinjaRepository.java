@@ -12,9 +12,9 @@ public interface NinjaRepository extends CrudRepository<Ninja, Long> {
 	// this method retrieves all the languages from the database
     List<Ninja> findAll();
     // this method finds languages with creators containing the search string
-    List<Ninja> findByCreatorContaining(String search);
+    List<Ninja> findByfirstNameContaining(String search);
     // this method counts how many names contain a certain string
-    Long countByNameContaining(String search);
+    Long countByfirstNameContaining(String search);
     // this method deletes a language that starts with a specific name
-    Long deleteByNameStartingWith(String search);
+    Long deleteByfirstNameStartingWith(String search);
 }
