@@ -27,7 +27,10 @@ public class Dojo {
     private List<Ninja> ninjas;
     
     public Dojo() {
-        
+    }
+    
+    public Dojo(String name) {
+    	this.name = name;
     }
 
 	public Long getId() {

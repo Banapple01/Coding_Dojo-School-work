@@ -7,25 +7,32 @@ import org.springframework.stereotype.Service;
 import com.Jonathan.relationships1.models.Dojo;
 import com.Jonathan.relationships1.models.Ninja;
 import com.Jonathan.relationships1.repositories.DojoRepository;
+import com.Jonathan.relationships1.repositories.NinjaRepository;
 
 @Service
 public class DojoService {
 private final DojoRepository langRepository;
+private final NinjaRepository ninRepo;
 	
-	public DojoService(DojoRepository langRepository) {
+	public DojoService(DojoRepository langRepository, NinjaRepository ninRepo) {
 		this.langRepository = langRepository;
+		this.ninRepo = ninRepo;
 	}
 	
-	// returns all the books
-    public List<Dojo> allLangs() {
+	
+    public List<Dojo> allDojos() {
         return langRepository.findAll();
     }
-    // creates a book
-    public Dojo createLang(Dojo b) {
+    
+    public Dojo createDojo(Dojo b) {
         return langRepository.save(b);
     }
-    // retrieves a book
-    public Dojo findLang(Long id) {
+    
+    public Ninja createNinja(Ninja b) {
+        return ninRepo.save(b);
+    }
+    
+    public Dojo findDojo(Long id) {
         Optional<Dojo> optionalLang = langRepository.findById(id);
         if(optionalLang.isPresent()) {
             return optionalLang.get();
@@ -34,8 +41,8 @@ private final DojoRepository langRepository;
         }
     }
 
-	public Dojo updateLang(Long id, String name) {
-		Dojo upLang = findLang(id);
+	public Dojo updateDojo(Long id, String name) {
+		Dojo upLang = findDojo(id);
 		if(upLang != null) {
 			upLang.setName(name);
 			return langRepository.save(upLang);
@@ -43,8 +50,8 @@ private final DojoRepository langRepository;
 		return null;
 	}
 
-	public void deleteLang(Long id) {
-		Dojo lang = findLang(id);
+	public void deleteDojo(Long id) {
+		Dojo lang = findDojo(id);
 		langRepository.delete(lang);
 	}
 }
