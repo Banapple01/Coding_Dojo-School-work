@@ -7,21 +7,21 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Shows</title>
+<title>Login/Reg</title>
 </head>
 <body>
-		<h1>Login</h1>
+	<h1>Login</h1>
 	    <p><c:out value="${error}" /></p>
 	    <form:form method="post" action="/login" modelAttribute="loginUser">
 	        <p>
 	            <label for="email">Email</label>
-	            <form:errors path="email"/>
 	            <form:input path="email" type="text" name="email"/>
+	            <form:errors path="email"/>
 	        </p>
 	        <p>
 	            <label for="password">Password</label>
-	            <form:errors path="password"/>
 	            <form:input path="password" type="password" id="password" name="password"/>
+	            <form:errors path="password"/>
 	        </p>
 	        <input type="submit" value="Login!"/>
 	    </form:form> 
@@ -30,23 +30,23 @@
 	    <form:form method="POST" action="/registration" modelAttribute="registeringUser">
 	    	<p>
 	            <form:label path="name">Name:</form:label>
-	            <form:errors path="name"/>
 	            <form:input type="name" path="name"/>
+	            <form:errors path="name"/>
 	        </p>
 	        <p>
 	            <form:label path="email">Email:</form:label>
-	            <form:errors path="email"/>
 	            <form:input type="email" path="email"/>
+	            <form:errors path="email"/>
 	        </p>
 	        <p>
 	            <form:label path="password">Password:</form:label>
-	            <form:errors path="password"/>
 	            <form:password path="password"/>
+	            <form:errors path="password"/>
 	        </p>
 	        <p>
 	            <form:label path="passwordConfirmation">Password Confirmation:</form:label>
-	            <form:errors path="passwordConfirmation"/>
 	            <form:password path="passwordConfirmation"/>
+	            <form:errors path="passwordConfirmation"/>
 	        </p>
 	        <input type="submit" value="Register!"/>
 	    </form:form>

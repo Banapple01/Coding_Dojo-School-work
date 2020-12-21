@@ -7,29 +7,33 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Shows</title>
+<title>Tasks Home</title>
 </head>
 <body>
-	
 	<h1>Welcome, ${user.name}</h1>
+	<a href="/logout">logout</a>
 	<table>
     <thead>
         <tr>
-            <th>Show</th>
-            <th>Network</th>
+            <th>Tasks</th>
+            <th>Creator</th>
+            <th>Assignee</th>
+            <th>Priority</th>
         </tr>
     </thead>
     <tbody>
-        <c:forEach items="${show}" var="show">
+        <c:forEach items="${task}" var="task">
         <tr>
-            <td><a href="/shows/${show.id}"><c:out value="${show.title}"/></a></td>
-            <td><c:out value="${show.network}"/></td>
+            <td><a href="/tasks/${task.id}"><c:out value="${task.title}"/></a></td>
+            <td><c:out value="${task.user.name}"/></td>
+            <td><c:out value="${task.assignee}"/></td>
+            <td><c:out value="${task.priority}"/></td>
         </tr>
         </c:forEach>
     </tbody>
 </table>
 
-<a href="/shows/new">add a show</a>
+<a href="/tasks/new">create task</a>
 
 </body>
 </html>

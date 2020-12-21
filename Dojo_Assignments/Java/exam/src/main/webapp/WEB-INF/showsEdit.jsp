@@ -7,19 +7,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>show</title>
+<title>Show</title>
 </head>
 <body>
-<form:form action="/shows/${show.id}/edit" method="post" modelAttribute="shows">
+<form:form action="/shows/${show.id}/edit" method="post" modelAttribute="show">
     <p>
         <form:label path="title">Title</form:label>
+        <form:input path="title" placeholder="${show.title}"/>
         <form:errors path="title"/>
-        <form:input path="title" value="${show.title}"/>
     </p>
     <p>
         <form:label path="network">Network</form:label>
+        <form:input path="network" placeholder="${show.network}"/>
         <form:errors path="network"/>
-        <form:input path="network" value="${show.network}"/>
     </p>   
     <input type="submit" value="update"/>
 </form:form>

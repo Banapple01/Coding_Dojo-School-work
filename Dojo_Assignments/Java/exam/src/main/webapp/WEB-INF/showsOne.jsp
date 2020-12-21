@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>show</title>
+<title>Show</title>
 </head>
 <body>
 	<h1><c:out value="${show.title}"/></h1>

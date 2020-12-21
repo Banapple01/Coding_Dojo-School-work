@@ -78,15 +78,16 @@ public class ShowController {
 	
 	@RequestMapping("/shows/{id}/edit")
     public String edit(@PathVariable("id") Long id, Model model, 
-    		@Valid @ModelAttribute("shows") Show show, BindingResult result) {
+    		@Valid @ModelAttribute("show") Show show, BindingResult result) {
     	Show shows = showService.findShow(id);
         model.addAttribute("show", shows);
         return "showsEdit.jsp";
     }
     
     @RequestMapping(value="/shows/{id}/edit", method=RequestMethod.POST)
-    public String update(@Valid @ModelAttribute("shows") Show show, BindingResult result) {
+    public String update(@Valid @ModelAttribute("show") Show show, BindingResult result, Model model) {
         if (result.hasErrors()) {
+            model.addAttribute("show", show);
             return "showsEdit.jsp";
         } else {
         	showService.updateShow(show.getId(), show.getTitle(), show.getNetwork());
