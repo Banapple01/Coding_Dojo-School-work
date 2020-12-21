@@ -1,9 +1,9 @@
-package com.Jonathan.authentication.validations;
+package com.Jonathan.exam.validations;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import com.Jonathan.authentication.models.User;
+import com.Jonathan.exam.models.User;
 @Component
 public class UserValidator implements Validator {
     
