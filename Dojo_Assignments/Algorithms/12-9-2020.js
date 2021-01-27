@@ -16,9 +16,6 @@ function isPalindrome(queue) {
 }
 
 
-
-
-
 let myQueue = new Queue();
 myQueue.enqueue(1);
 myQueue.enqueue(2);
