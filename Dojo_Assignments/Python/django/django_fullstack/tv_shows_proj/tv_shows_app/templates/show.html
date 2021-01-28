@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +9,8 @@
     <title>Read(One)</title>
 </head>
 <body>
+    {% block content %}
+
     <h1>TV Show {{ show.id }}</h1>
     <h3>Title: {{show.title}}</h3>
     <h3>Network: {{show.network}}</h3>
@@ -14,6 +19,7 @@
 
     <a href="{% url 'show_edit' show.id %}">Edit</a>
     <a href="{% url 'show_delete' show.id %}">Delete</a>
-    <a href="/">Go Back</a>
+
+    {% endblock content %}
 </body>
 </html>

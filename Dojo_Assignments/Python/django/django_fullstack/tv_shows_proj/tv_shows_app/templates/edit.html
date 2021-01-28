@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +9,9 @@
     <title>Update</title>
 </head>
 <body>
-    <h1>Edit Show {{edit_show.id}}</h1>
+    {% block content %}
+
+    <h1>Edit Show "{{edit_show.title}}"</h1>
     <form action="/edit_show" method="post">
         {% csrf_token %}
         <input type="hidden" name="show_id" value="{{edit_show.id}}">
@@ -15,7 +20,7 @@
         <label for="network">Network</label>
         <input type="text" name="network" value="{{edit_show.network}}">
         <label for="rel_date">Release Date</label>
-        <input type="date" name="rel_date" value="{{edit_show.rel_date|date:'yy/m/d'}}">
+        <input type="date" name="rel_date" value="{{edit_show.rel_date}}|date:'mm/dd/yyyy'">
         <label for="desc">Description</label>
         <input type="text" name="desc" value="{{edit_show.desc}}">
         <button type="submit">Update</button>
@@ -27,7 +32,8 @@
         {% endfor %}
     </ul>
     {% endif %}
-    <a href="{% url 'show_desc' edit_show.id %}">Go To Show</a>
-    <a href="/">Go Back</a>
+    <a href="{% url 'show_desc' edit_show.id %}">Go To Desc...</a>
+    
+    {% endblock content %}
 </body>
 </html>
