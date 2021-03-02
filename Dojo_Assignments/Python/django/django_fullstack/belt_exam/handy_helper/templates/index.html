@@ -1,12 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wishing App</title>
+    
+    <link href="{% static 'css/login_styles.css' %}" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome! Sign in to manage your jobs!</h1>
+    <!-- <h1>Welcome! Sign in to manage your jobs!</h1>
     {% if messages %}
     <ul class="messages">    
         {% for message in messages %}    
@@ -37,6 +41,34 @@
         <label for="password">Password</label>
             <input type="password" name="password">
         <button type="submit">Login</button>
-    </form>
+    </form> -->
+
+    <div id="login-box">
+        <div class="left">
+            <h1>Sign up</h1>
+            <form action="/register" method="POST">
+                {% csrf_token %}
+                
+                <input type="text" name="f_name" placeholder="First name">
+                <input type="text" name="l_name" placeholder="Last name">
+                <input type="text" name="email" placeholder="E-mail" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="password" name="password_C" placeholder="Retype password" />
+                
+                <input type="submit" name="signup_submit" value="Sign me up" />
+            </form>
+        </div>
+        
+        <div class="right">
+        <span class="loginwith">Sign In</span>
+            <form action="/login" method="POST">
+                {% csrf_token %}
+                <input type="text" name="email" placeholder="E-mail">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit" name="signup_submit" value="Login" />
+            </form>
+        </div>
+        <div class="or">OR</div>
+    </div>
 </body>
 </html>
